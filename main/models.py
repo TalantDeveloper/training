@@ -17,5 +17,8 @@ class Student(models.Model):
     image = models.ImageField(upload_to='images/', default='images/avatar.png')
     content = RichTextUploadingField(verbose_name="Content", null=True, blank=True)
 
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.full_name

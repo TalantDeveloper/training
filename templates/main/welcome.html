@@ -20,10 +20,10 @@
                                     Toshkent Davlat Stomatologiya Instituti Malaka oshirish fakulteti
                                 </p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
-                                    Search A Job
+                                    Malaka oshirganlar
                                 </a>
                                 <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
-                                    Find A Talent
+                                    E'lonlar
                                 </a>
                             </div>
                         </div>
@@ -44,10 +44,10 @@
                                     Toshkent Davlat Stomatologiya Instituti Malaka oshirish fakulteti
                                 </p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
-                                    Search A Job
+                                    Malaka oshirganlar
                                 </a>
-                                <a href="{{ image }}" target="_blank" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
-                                    Find A Talent
+                                <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
+                                    E'lonlar
                                 </a>
                             </div>
                         </div>
@@ -62,16 +62,49 @@
     <div class="container-xxl py-5">
         <div class="container">
             <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                Job Listing
+                Malaka oshirganlar
             </h1>
             <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
 
+                        {% for student in students %}
+                            <div class="job-item p-4 mb-4">
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid border rounded"
+                                             src="{{ student.image.url }}" alt=""
+                                             style="width: 80px; height: 100px;">
+                                        <div class="text-start ps-4">
+                                            <h5 class="mb-3">
+                                                {{ student.full_name }}
+                                            </h5>
+                                            <span class="text-truncate me-3">
+                                                <i class="fa fa-file-archive text-primary me-2"></i>
+                                                {{ student.direction }}
+                                            </span>
+                                            <span class="text-truncate me-3">
+                                                <i class="far fa-calendar-alt text-primary me-2"></i>
+                                                Bitirgan: {{ student.study_end|date:"d-m-Y" }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                        <div class="d-flex mb-3">
+                                            <a class="btn btn-primary" href="">
+                                                ko'rish
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    
                         <div class="job-item p-4 mb-4">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded" src="{% static 'img/com-logo-2.jpg' %}" alt=""
+                                    <img class="flex-shrink-0 img-fluid border rounded"
+                                         src="{% static 'img/com-logo-2.jpg' %}" alt=""
                                          style="width: 80px; height: 80px;">
                                     <div class="text-start ps-4">
                                         <h5 class="mb-3">
@@ -107,7 +140,8 @@
                         <div class="job-item p-4 mb-4">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded" src="{% static 'img/com-logo-3.jpg' %}" alt=""
+                                    <img class="flex-shrink-0 img-fluid border rounded"
+                                         src="{% static 'img/com-logo-3.jpg' %}" alt=""
                                          style="width: 80px; height: 80px;">
                                     <div class="text-start ps-4">
                                         <h5 class="mb-3">
@@ -146,7 +180,8 @@
                         <div class="job-item p-4 mb-4">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded" src="{% static 'img/com-logo-4.jpg' %}" alt=""
+                                    <img class="flex-shrink-0 img-fluid border rounded"
+                                         src="{% static 'img/com-logo-4.jpg' %}" alt=""
                                          style="width: 80px; height: 80px;">
                                     <div class="text-start ps-4">
                                         <h5 class="mb-3">
@@ -185,7 +220,8 @@
                         <div class="job-item p-4 mb-4">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded" src="{% static 'img/com-logo-5.jpg' %}" alt=""
+                                    <img class="flex-shrink-0 img-fluid border rounded"
+                                         src="{% static 'img/com-logo-5.jpg' %}" alt=""
                                          style="width: 80px; height: 80px;">
                                     <div class="text-start ps-4">
                                         <h5 class="mb-3">
@@ -230,8 +266,8 @@
         </div>
     </div>
     <!-- Jobs End -->
-    
-    
+
+
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -319,6 +355,6 @@
         </div>
     </div>
     <!-- Testimonial End -->
-    
+
 
 {% endblock %}
