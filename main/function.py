@@ -8,5 +8,3 @@ def create_qrcode(request, student_id):
     text = pyqrcode.create(message)
     text.png(f"{BASE_DIR}/media/student/{student_id}.png", scale=8)
     return f"{BASE_URL}/media/student/{student_id}.png"
-
-
